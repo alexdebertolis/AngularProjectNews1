@@ -1,0 +1,18 @@
+<div class="container border rounded d-flex  justify-content-center">
+    <form class="d-flex" #loginForm="ngForm" (ngSubmit)="send()">
+        <div class="d-flex mb-3 form-group">
+            <input 
+                type="text" 
+                placeholder="Username" 
+                required 
+                class="form-control border border-dark">
+            <input 
+                type="password"
+                placeholder="Password" 
+                required class="border border-dark form-control"> 
+        </div>
+        <div>
+            <button type="submit" (click)="send()" class="btn btn-primary btn-sm col-6 m-2 border border-dark">Sign in</button>
+        </div> 
+    </form>
+</div>
