@@ -23,26 +23,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
-<<<<<<< Updated upstream
-    this.articles = [
-       {
-        id: 100,
-        id_user: 1,
-        abstract: '',
-        subtitle: '',
-        update_date: '',
-        category: Category.National,
-        title: '',
-        image_data: '',
-        image_media_type: '',
-      }
-    ];
-    //this.getArticles();
-    //throw new Error('Method not implemented.');
-=======
     this.articles = [ ];
    
->>>>>>> Stashed changes
   }
 
   log(val: any) {
