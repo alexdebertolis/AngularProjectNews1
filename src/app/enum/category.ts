@@ -4,4 +4,5 @@ export enum Category {
   Sports = 'Sports',
   Technology = 'Technology',
   All = 'All',
+  Nothing = 'nothing'
 }
