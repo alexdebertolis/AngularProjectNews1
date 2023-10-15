@@ -3,16 +3,17 @@
 <div class="card" (click)=this.redirect(articles.indexOf(article))  style="width: 18rem;" >
   <img src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" class="card-img-top" alt="...">
   <div class="card-body">
+    {{log("art" + article.body)}}
     <div class="d-flex justify-content-between">
     <h5  class="card-title ">{{article.title}}</h5>
     <h6  id="id" class="card-title text-end ">{{article.id}}</h6>
     </div>
-    <p class="card-text">{{article.abstract}}</p>
-    <span class="card-text text-end" id="cat"> {{article.category.valueOf()}}</span>
+    <p class="card-text">{{article.subtitle}}</p>
+    <span class="card-text text-end" id="cat"> {{article.body.category}}</span>
     <div class="d-flex">
     <button class="btn btn-primary  justify-content-center m-2"> Edit</button>
     <button class="btn btn-danger  justify-content-center m-2"> Remove</button>
-    
+   
 </div>
   </div>
 </div>

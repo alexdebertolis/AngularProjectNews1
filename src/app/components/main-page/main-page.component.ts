@@ -23,6 +23,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
+<<<<<<< Updated upstream
     this.articles = [
        {
         id: 100,
@@ -38,6 +39,10 @@ export class MainPageComponent implements OnInit {
     ];
     //this.getArticles();
     //throw new Error('Method not implemented.');
+=======
+    this.articles = [ ];
+   
+>>>>>>> Stashed changes
   }
 
   log(val: any) {
@@ -54,9 +59,25 @@ export class MainPageComponent implements OnInit {
   getArticles(): void {
     this.log('get articles start');
     this.newsServ.getArticles().subscribe(
-      (articlesList: Article[]) => {       
-        this.articles = articlesList;
-        this.log(this.articles)
+      (articlesList:any) => {       
+        this.log(articlesList)
+        for (let index = 0; index < articlesList.length; index++) {
+          this.articles.push({id: articlesList[index].id,
+            body: {
+              aut: articlesList[index].aut,
+              category: articlesList[index].category,
+              id_user: articlesList[index].id_user,
+              is_deleted: articlesList[index].is_deleted,
+              is_public: articlesList[index].is_public,
+              thumbnail_image: articlesList[index].thumbnail_image,
+              thumbnail_media_type: articlesList[index].thumbnail_media_type,
+              update_date: articlesList[index].update_date,
+              username:articlesList[index].username
+            },
+            title: articlesList[index].title,
+            subtitle: articlesList[index].subtitle,
+            abstract: articlesList[index].abstract,})
+        }
       },
       (err) => {
         this.articles = new Array<Article>();
