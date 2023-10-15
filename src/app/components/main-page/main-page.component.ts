@@ -11,8 +11,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  articles: Article[];
-  message: string | null;
+  articles: Article[] = []; 
+  message: string | null | undefined;
 
   constructor(
     public newsServ: NewsService,
@@ -23,19 +23,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticles();
-    this.articles = [
-       {
-        id: 100,
-        id_user: 1,
-        abstract: '',
-        subtitle: '',
-        update_date: '',
-        category: Category.National,
-        title: '',
-        image_data: '',
-        image_media_type: '',
-      }
-    ];
+    this.articles = [ ];
     //this.getArticles();
     //throw new Error('Method not implemented.');
   }
@@ -58,7 +46,7 @@ export class MainPageComponent implements OnInit {
         this.articles = articlesList;
         this.log(this.articles)
       },
-      (err) => {
+      (err: any) => {
         this.articles = new Array<Article>();
         this.message = `An error has ocurred: ${JSON.stringify(err)}`;
         this.log(this.message);
