@@ -3,6 +3,5 @@ export enum Category {
   Economy = 'Economy',
   Sports = 'Sports',
   Technology = 'Technology',
-  All = 'All',
-  Nothing = 'nothing'
+  All = 'All'
 }
